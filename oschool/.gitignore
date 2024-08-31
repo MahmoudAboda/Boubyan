@@ -1,0 +1,48 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.DS_Store
+
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+src/test/java/com/acuanix/geointime/employer/service/workplan/impl/WorkPlanServiceImplTest.java
+src/test/java/com/acuanix/geointime/employer/service/team/impl/TeamServiceImplTest.java
+src/test/java/com/acuanix/geointime/employer/OfficeApplicationTests.java
+src/test/java/com/acuanix/geointime/employer/mapper/WorkPlanMapperTest.java
+src/test/java/com/acuanix/geointime/employer/mapper/TeamsMapperTest.java
+src/test/java/com/acuanix/geointime/employer/service/workplan/impl/WorkPlanServiceImplTest.java
+src/test/java/com/acuanix/geointime/employer/service/team/impl/TeamServiceImplTest.java
+src/test/java/com/acuanix/geointime/employer/OfficeApplicationTests.java
+src/test/java/com/acuanix/geointime/employer/mapper/WorkPlanMapperTest.java
+src/test/java/com/acuanix/geointime/employer/mapper/TeamsMapperTest.java
+src/main/resources/application.properties
+src/main/resources/application.properties
+src/main/resources/application-prod.properties
