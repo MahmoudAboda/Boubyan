@@ -26,6 +26,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+import static com.oschool.student.util.UserUtils.convertToLong;
+
 
 @Service
 @Slf4j
@@ -79,12 +81,16 @@ public class StudentServiceImpl implements IStudentService {
      */
     public List<StudentCourseDTO> findStudentCoursesByStudentId(String token) {
         try {
+            Long studentId;
             // Extract student ID from the JWT token
-            String student = jwtUtils.getStudentIdFromToken(token);
-            Long studentId = Long.parseLong(student);
-
-            // Retrieve student info from cache (optional, but useful for caching logic)
-            CachedStudentInfo cachedStudentInfo = cacheService.getValueByKeyFromToCachedStudentInfoMap(studentId);
+            CachedStudentInfo cachedStudentInfo =
+                    cacheService.getValueByKeyFromToCachedStudentInfoMap(convertToLong(jwtUtils.getStudentIdFromToken(token)));
+            if (cachedStudentInfo != null && cachedStudentInfo.getId() != null) {
+                studentId = cachedStudentInfo.getId();
+            } else {
+                String student = jwtUtils.getStudentIdFromToken(token);
+                studentId = Long.parseLong(student);
+            }
 
             // Fetch the list of courses for the student from the repository
             return courseRepository.findStudentCoursesByStudentId(studentId);
